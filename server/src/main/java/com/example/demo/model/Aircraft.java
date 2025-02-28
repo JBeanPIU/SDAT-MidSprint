@@ -5,11 +5,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Aircraft that allows Passengers to travel
  */
-@Entity  // Defines this class as a database entity
+@Entity  // defines this class as a database entity
+@Data // generate the mutator/accessors, toString, any hashCode and equals
+@NoArgsConstructor // generates a default constructor, to reduce code size
 public class Aircraft {
     @Id  // pk
     @GeneratedValue(strategy = GenerationType.IDENTITY)  // auto-gen ID
