@@ -7,16 +7,16 @@ import lombok.NoArgsConstructor;
 
 /* ========================================================== */
 /**
- * This class is designed to represent cities that hold airports
+ * Passenger class for helping people book flights, keeps track of their name and phone number
  */
-@Entity  // @entity marks class as a JPA entity (which is linked to a database table)
+@Entity  // mark as JPA entity
 @Data // generate the mutator/accessors, toString, any hashCode and equals
 @NoArgsConstructor // generates a default constructor, to reduce code size
-public class City {
-    @Id  // marking field as primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // auto-gen ID value
+public class Passenger {
+    @Id  // pk
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // auto-gen ID
     private Long id;
-    private String name;
-    private String state;
-    private int population;
+    private String firstName;
+    private String lastName;
+    private String phoneNumber;
 }
